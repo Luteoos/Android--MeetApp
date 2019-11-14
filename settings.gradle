@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='roxa'
+rootProject.name='Android--MeetApp'
