@@ -4,16 +4,25 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import io.github.luteoos.roxa.view.MainActivity
+import io.github.luteoos.roxa.view.activity.MainSignActivity
 import java.util.*
 
 object Session {
     private val USER_UUID = "USER_UUID"
+    private val TOKEN = "TOKEN"
     lateinit var preferences: SharedPreferences
 
     fun init(context: Context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(context)
     }
+
+    var token: String
+        get() {
+           return preferences.getString(TOKEN, "") ?: ""
+        }
+        set(value) {
+            preferences.edit().putString(TOKEN, value).apply()
+        }
 
 
     val userUUDString: String?
@@ -29,7 +38,7 @@ object Session {
 
     fun logout(context: Context) {
         preferences.edit().clear().apply()
-        val intent = Intent(context, MainActivity::class.java)
+        val intent = Intent(context, MainSignActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
