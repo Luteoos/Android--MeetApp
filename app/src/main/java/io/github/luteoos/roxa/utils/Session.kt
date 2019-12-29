@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import io.github.luteoos.roxa.view.activity.MainSignActivity
+import io.github.luteoos.roxa.view.activity.SignInActivity
 import java.util.*
 
 object Session {
@@ -38,7 +38,7 @@ object Session {
 
     fun logout(context: Context) {
         preferences.edit().clear().apply()
-        val intent = Intent(context, MainSignActivity::class.java)
+        val intent = Intent(context, SignInActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
