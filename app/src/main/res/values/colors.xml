@@ -7,6 +7,7 @@
     <color name="colorAccentDark">#18ffe1</color>
     <color name="colorFont">@color/ivory</color>
     <color name="colorBackground">@color/beige</color>
+    <color name="borderAvatarColor">#FF0000</color>
     <color name="ivory">#FFFFF0</color>
     <color name="light_yellow">#FFFFE0</color>
     <color name="yellow">#FFFF00</color>

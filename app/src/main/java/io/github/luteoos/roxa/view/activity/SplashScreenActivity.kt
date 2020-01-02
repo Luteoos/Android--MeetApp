@@ -19,7 +19,7 @@ class SplashScreenActivity : BaseActivityMVVM<BaseViewModel>() {
     private fun checkToken(){
         val intent = Intent(this,
             if(Session.token.isNotEmpty())
-                SignInActivity::class.java //todo here MainScreen
+                MainScreenActivity::class.java
             else
                 SignInActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

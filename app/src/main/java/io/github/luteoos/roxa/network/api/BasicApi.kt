@@ -12,7 +12,7 @@ interface BasicApi {
     fun logIn(@Body loginRequest: LoginRequest) : Single<Response<String>>
 
     @GET("register")
-    fun register(@Body registerRquest: RegisterRquest) : Single<Response<String>>
+    fun register(@Body registerRequest: RegisterRequest) : Single<Response<String>>
 
     @GET("tos")
     fun getToS(): Single<Response<String>>

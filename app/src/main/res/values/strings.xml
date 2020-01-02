@@ -1,3 +1,4 @@
 <resources>
     <string name="author">Matthew Lutecki</string>
+    <string name="logout">Sign out</string>
 </resources>

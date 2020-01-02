@@ -10,6 +10,7 @@ import java.util.*
 object Session {
     private val USER_UUID = "USER_UUID"
     private val TOKEN = "TOKEN"
+    private val USERNAME = "USERNAME"
     lateinit var preferences: SharedPreferences
 
     fun init(context: Context) {
@@ -34,6 +35,14 @@ object Session {
         }
         set(value) {
             preferences.edit().putString(USER_UUID, value.toString()).apply()
+        }
+
+    var username: String
+        get() {
+            return preferences.getString(USERNAME, "") ?: ""
+        }
+        set(value) {
+            preferences.edit().putString(USERNAME, value).apply()
         }
 
     fun logout(context: Context) {
