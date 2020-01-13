@@ -12,6 +12,16 @@
         <item name="buttonStyle">@style/StandardRoundedButton</item>
     </style>
 
+    <style name="HorizontalBarStyle" >
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:layout_height">55dp</item>
+    </style>
+
+    <style name="CustomButtonBar" parent="Widget.AppCompat.ButtonBar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_height">@dimen/menuBarHeight</item>
+    </style>
+
     <style name="StandardTextView" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">12sp</item>

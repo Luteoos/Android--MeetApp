@@ -1,4 +1,8 @@
 <resources>
     <string name="author">Matthew Lutecki</string>
     <string name="logout">Sign out</string>
+    <string name="myTeams">My Teams</string>
+    <string name="myProfile">Profile</string>
+    <string name="myEvents">Events</string>
+    <string name="boilerplate_resource_sample">Panta Rhei</string>
 </resources>

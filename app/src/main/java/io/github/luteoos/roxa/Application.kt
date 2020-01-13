@@ -2,12 +2,14 @@ package io.github.luteoos.roxa
 
 import android.app.Application
 import android.os.StrictMode
+import io.github.luteoos.roxa.utils.Session
 import timber.log.Timber
 
 class Application : Application() {
     override fun onCreate() {
         super.onCreate()
         Timber.e(this.toString())
+        Session.init(applicationContext)
         if(BuildConfig.DEBUG)
             initDebugStuff()
 //        Realm.init(this)
