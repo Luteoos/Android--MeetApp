@@ -1,5 +1,6 @@
 package io.github.luteoos.roxa.utils
 
+import android.widget.ListView
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
@@ -17,6 +18,33 @@ fun String.getFormattedDate(outputPattern: String = "yyyy-MM-dd HH:mm"): String 
         Timber.e(e)
     }
     return formattedDateString
+}
+
+fun ListView.setListViewHeightBasedOnItems() : Boolean{
+
+    val listAdapter = this.adapter
+    if (listAdapter != null) {
+
+        val numberOfItems = listAdapter.count
+        var totalItemsHeight = 0
+        for (itemPos in 0 until numberOfItems) {
+            val item = listAdapter.getView(itemPos, null, this)
+            item.measure(0, 0)
+            totalItemsHeight += item.measuredHeight
+        }
+        val totalDividersHeight = this.dividerHeight *
+                (numberOfItems - 1);
+
+        val params = this.layoutParams
+        params.height = totalItemsHeight + totalDividersHeight
+        this.layoutParams = params
+        this.requestLayout()
+
+        return true;
+    } else {
+        return false;
+    }
+
 }
 
 fun String.toUUID() =

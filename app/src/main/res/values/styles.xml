@@ -9,6 +9,7 @@
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="android:textViewStyle">@style/StandardTextView</item>
         <item name="editTextStyle">@style/RoundedEditText</item>
+        <item name="android:textColor">@color/colorFont</item>
         <item name="buttonStyle">@style/StandardRoundedButton</item>
     </style>
 
@@ -29,8 +30,12 @@
         <item name="android:clickable">true</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="cardCornerRadius">4dp</item>
-        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_margin">6dp</item>
         <item name="cardBackgroundColor">@color/colorCardViewBackground</item>
+    </style>
+
+    <style name="NestedRecyclerViewCard" parent="RecyclerViewCard">
+        <item name="cardBackgroundColor">@color/colorBackgroundDark</item>
     </style>
 
     <style name="StandardTextView" parent="@android:style/TextAppearance.Widget.TextView">
@@ -61,18 +66,32 @@
     </style>
 
     <style name="StandardRoundedButton" parent="Widget.AppCompat.Button">
-<!--        <item name="android:background">@drawable/rounded_button_frame</item>-->
+        <item name="android:background">@drawable/rounded_button</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textSize">18sp</item>
         <item name="android:elevation">2dp</item>
     </style>
 
+    <style name="TextButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorAccentDark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="background">@android:color/transparent</item>
+    </style>
 
     <style name="FilledRoundedButton" parent="Widget.AppCompat.Button">
 <!--        <item name="android:background">@drawable/rounded_button_filled</item>-->
         <item name="android:textColor">@color/colorBackground</item>
         <item name="android:textSize">18sp</item>
         <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="FabAdd" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:gravity">bottom|end</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="backgroundTint">@color/colorAccentDark</item>
+        <item name="android:clickable">true</item>
+        <item name="android:src">@drawable/ic_add_24px</item>
     </style>
 
 </resources>

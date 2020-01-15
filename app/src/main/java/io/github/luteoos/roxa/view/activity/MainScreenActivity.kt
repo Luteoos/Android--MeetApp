@@ -47,7 +47,7 @@ class MainScreenActivity : BaseActivity<MainScreenViewModel>() {
             adapter = RVMyTeams(
                 this@MainScreenActivity,
                 testList
-            )
+            ){_,_ ->}
         }
     }
 

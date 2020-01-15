@@ -41,7 +41,7 @@ interface BasicApi {
             Single<Response<MutableList<String>>>//here change for correct
 
     @GET("{userId}/group/{groupId}/myDays")
-    fun getMyDays(@Path("userId") userId: String, @Path("groupId") groupId: String, @Body myDaysRequest: MyDaysRequest) :
+    fun getMyDays(@Query("userId") userId: String, @Path("groupId") groupId: String, @Body myDaysRequest: MyDaysRequest) :
             Single<Response<MutableList<Day>>>
 
     @POST("{userId}/group/{groupId}/event")

@@ -1,7 +1,10 @@
 package io.github.luteoos.roxa.view.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import io.github.luteoos.roxa.BuildConfig
 import io.github.luteoos.roxa.R
 import io.github.luteoos.roxa.baseAbstract.BaseFragment
 import io.github.luteoos.roxa.viewmodel.SignInViewModel
@@ -17,13 +20,23 @@ class SignUpFragment : BaseFragment<SignInViewModel>() {
     }
 
     override fun refresh() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun setBindings(){
         btnSignUp.setOnClickListener {
             viewModel.sendNudes()
         }
+        tvTos.text = getText(R.string.tos_accept)
+        tvTos.setOnClickListener {
+            openTermsOfServiceIntent()
+        }
+    }
+
+    private fun openTermsOfServiceIntent(){
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(BuildConfig.TOS_URL)
+        if(intent.resolveActivity(activity!!.packageManager) != null)
+            startActivity(intent)
     }
 
 }

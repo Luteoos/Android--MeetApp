@@ -3,6 +3,7 @@ package io.github.luteoos.roxa.view.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import es.dmoral.toasty.Toasty
 import io.github.luteoos.roxa.baseAbstract.BaseFragment
 import io.github.luteoos.roxa.viewmodel.MainScreenViewModel
 import io.github.luteoos.roxa.R
@@ -31,7 +32,9 @@ class MyDaysFragment : BaseFragment<MainScreenViewModel>() {
             adapter = RVMyDays(
                 context,
                 testList
-            )
+            ){uuid, parameter ->
+                Toasty.success(context, uuid + parameter).show()
+            }
         }
     }
 

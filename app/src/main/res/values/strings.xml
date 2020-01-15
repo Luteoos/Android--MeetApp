@@ -6,10 +6,14 @@
     <string name="myEvents">Events</string>
     <string name="register_text">Don\'t have account yet? Sign up now!</string>
     <string name="login_text">Already have account? Sign in!</string>
+    <string name="tos_accept">I have read and accept <b><u>terms of service</u></b></string>
     <string name="mail">E-Mail</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="register">Sign Up</string>
     <string name="login">Sign In</string>
+    <string name="date_from">From:</string>
+    <string name="date_to">To:</string>
+    <string name="add">Add</string>
     <string name="boilerplate_resource_sample">Panta Rhei</string>
 </resources>

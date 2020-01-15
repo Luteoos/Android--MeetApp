@@ -14,6 +14,7 @@
 <!--    <color name="colorAccentDark">#18ffe1</color>-->
 <!--    <color name="colorFont">@color/ivory</color>-->
     <color name="colorBackgroundLight">#AA22020b</color>
+    <color name="colorBackgroundDark">#AA121212</color>
     <color name="colorBackground">#121212</color>
     <color name="borderAvatarColor">#a30b36</color>
     <color name="ivory">#FFFFF0</color>

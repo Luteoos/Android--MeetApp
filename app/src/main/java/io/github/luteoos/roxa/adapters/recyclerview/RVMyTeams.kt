@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import io.github.luteoos.roxa.R
+import io.github.luteoos.roxa.adapters.listAdapter.ListTeamMembersAdapter
+import io.github.luteoos.roxa.utils.setListViewHeightBasedOnItems
 import kotlinx.android.synthetic.main.rv_my_teams.view.*
 
-class RVMyTeams(private val ctx: Context, private val data: MutableList<String>) : RecyclerView.Adapter<RVMyTeams.RVMyTeamsViewHolder>() {
+class RVMyTeams(private val ctx: Context, private val data: MutableList<String>, private val message: (String, String) -> Unit)
+    : RecyclerView.Adapter<RVMyTeams.RVMyTeamsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RVMyTeamsViewHolder {
         return RVMyTeamsViewHolder(
@@ -19,10 +22,17 @@ class RVMyTeams(private val ctx: Context, private val data: MutableList<String>)
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: RVMyTeamsViewHolder, position: Int) {
-        holder.tvName.text = data[position]
+        holder.tvTeamName.text = data[position]
+        holder.membersList?.apply {
+            adapter = ListTeamMembersAdapter(ctx, listOf("qqqa", "twojaStara", "hehehehe"))
+            setListViewHeightBasedOnItems()
+        }
     }
 
     class RVMyTeamsViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val tvName = view.tvName
+        val tvTeamName = view.tvTeamName
+        val tvTeamDescription = view.tvTeamDescription
+        val detailsCard = view.cardMembers
+        val membersList = view.listMembers
     }
 }
