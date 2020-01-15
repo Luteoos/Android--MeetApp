@@ -13,13 +13,24 @@
     </style>
 
     <style name="HorizontalBarStyle" >
-        <item name="android:background">@color/colorPrimaryDark</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+        <item name="android:layout_height">@dimen/menuBarHeight</item>
+        <item name="buttonStyle">@style/CustomButtonBar</item>
     </style>
 
     <style name="CustomButtonBar" parent="Widget.AppCompat.ButtonBar">
         <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
         <item name="android:layout_height">@dimen/menuBarHeight</item>
+    </style>
+
+    <style name="RecyclerViewCard" parent="Base.CardView">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="cardBackgroundColor">@color/colorCardViewBackground</item>
     </style>
 
     <style name="StandardTextView" parent="@android:style/TextAppearance.Widget.TextView">
@@ -28,7 +39,7 @@
     </style>
 
     <style name="HeaderTextView" parent="@android:style/TextAppearance.Widget.TextView">
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorFont</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -39,12 +50,12 @@
 
     <style name="RoundedEditText" parent="Widget.AppCompat.EditText">
         <item name="android:padding">10dp</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorAccentDark</item>
         <item name="android:colorControlNormal">@color/colorPrimary</item>
         <item name="android:colorControlActivated">@color/colorPrimaryDark</item>
         <item name="android:colorControlHighlight">@color/colorPrimary</item>
-<!--        <item name="android:background">@drawable/rounded_frame</item>-->
+        <item name="android:background">@drawable/rounded_frame</item>
         <item name="android:textSize">18sp</item>
         <item name="android:elevation">2dp</item>
     </style>

@@ -1,8 +1,15 @@
 <resources>
     <string name="author">Matthew Lutecki</string>
     <string name="logout">Sign out</string>
-    <string name="myTeams">My Teams</string>
-    <string name="myProfile">Profile</string>
+    <string name="myTeams">Teams</string>
+    <string name="myProfile">Days</string>
     <string name="myEvents">Events</string>
+    <string name="register_text">Don\'t have account yet? Sign up now!</string>
+    <string name="login_text">Already have account? Sign in!</string>
+    <string name="mail">E-Mail</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Sign Up</string>
+    <string name="login">Sign In</string>
     <string name="boilerplate_resource_sample">Panta Rhei</string>
 </resources>
