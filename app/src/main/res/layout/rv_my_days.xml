@@ -40,8 +40,6 @@
                 android:id="@+id/rvDaysDetailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnAdd">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_below="@id/btnAdd"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

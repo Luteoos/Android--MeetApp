@@ -14,6 +14,17 @@
     <string name="login">Sign In</string>
     <string name="date_from">From:</string>
     <string name="date_to">To:</string>
+    <string name="date_event_from">From: %s</string>
+    <string name="date_event_to">To: %s</string>
     <string name="add">Add</string>
+    <string name="create_event_title">CREATE EVENT</string>
+    <string name="create_free_time_title">CREATE FREE TIME</string>
+    <string name="create_team">create team</string>
+    <string name="join_team">join team</string>
+    <string name="button_pick_start_date">start date</string>
+    <string name="button_pick_end_date"> end date </string>
+    <string name="event_name_hint">Event name</string>
+    <string name="event_desc_hint">Event description</string>
+    <string name="event_local_hint">Event place</string>
     <string name="boilerplate_resource_sample">Panta Rhei</string>
 </resources>

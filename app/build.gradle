@@ -85,6 +85,5 @@ dependencies {
     //gms
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
-    implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 }

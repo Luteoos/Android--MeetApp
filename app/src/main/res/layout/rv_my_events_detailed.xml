@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorCardViewBackground">
+
+    <ImageView
+        android:id="@+id/ivMemberName"
+        android:layout_margin="4dp"
+        android:layout_gravity="bottom|end"
+        android:scaleType="fitStart"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"/>
+
+    <ImageView
+        android:id="@+id/ivAvailability"
+        android:scaleType="fitCenter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom|end" />
+
+</FrameLayout>

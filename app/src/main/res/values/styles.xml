@@ -13,6 +13,17 @@
         <item name="buttonStyle">@style/StandardRoundedButton</item>
     </style>
 
+    <style name="DialogActivity" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="buttonStyle">@style/StandardRoundedButton</item>
+        <item name="editTextStyle">@style/RoundedEditText</item>
+        <item name="titleEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
     <style name="HorizontalBarStyle" >
         <item name="android:background">@color/colorBackgroundLight</item>
         <item name="android:layout_height">@dimen/menuBarHeight</item>

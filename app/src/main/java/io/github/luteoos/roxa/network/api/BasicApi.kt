@@ -1,6 +1,5 @@
 package io.github.luteoos.roxa.network.api
 
-import io.github.luteoos.roxa.model.Day
 import io.github.luteoos.roxa.model.Event
 import io.github.luteoos.roxa.network.request.*
 import io.reactivex.Single
@@ -40,9 +39,6 @@ interface BasicApi {
     fun getGroupDays(@Path("userId") userId: String, @Path("groupId") groupId: String, @Body groupDaysRequest: GroupDaysRequest) :
             Single<Response<MutableList<String>>>//here change for correct
 
-    @GET("{userId}/group/{groupId}/myDays")
-    fun getMyDays(@Query("userId") userId: String, @Path("groupId") groupId: String, @Body myDaysRequest: MyDaysRequest) :
-            Single<Response<MutableList<Day>>>
 
     @POST("{userId}/group/{groupId}/event")
     fun createEvent(@Path("userId") userId: String, @Path("groupId") groupId: String, @Body eventRequest: UpdateEventRequest) :
