@@ -7,6 +7,8 @@ object Parameters {
     const val SHOW_PROGRESS_BAR = 69
     const val HIDE_PROGRESS_BAR = 70
     const val OPEN_DIALOG_ACTIVITY = 111
+    const val SHOW_ERROR_TOAST = 99
+    const val REFRESH = 33
 
     const val REST_DATE = "yy-MMM-dd hh:mm:ss a"
     const val DELETE_FREE_TIME = "DELETE_FREE_TIME"
@@ -16,5 +18,7 @@ object Parameters {
     const val CREATE_EVENT = "CREATE_EVENT"
     const val EVENT_ACCEPT= "EVENT_ACCEPT"
     const val EVENT_DECLINE = "EVENT_DECLINE"
+    const val TEAM_ID = "TEAM_ID"
+    const val SALT = "tJKNcI6jC6A"
 
 }

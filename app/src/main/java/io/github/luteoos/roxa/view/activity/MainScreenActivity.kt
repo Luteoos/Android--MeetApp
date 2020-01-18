@@ -2,6 +2,7 @@ package io.github.luteoos.roxa.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.transition.Transition
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
@@ -10,6 +11,7 @@ import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amulyakhare.textdrawable.TextDrawable
+import es.dmoral.toasty.Toasty
 import io.github.luteoos.roxa.R
 import io.github.luteoos.roxa.adapters.recyclerview.RVMyTeams
 import io.github.luteoos.roxa.baseAbstract.*
@@ -50,6 +52,8 @@ class MainScreenActivity : BaseActivity<MainScreenViewModel>() {
         when(msg){
             Parameters.SHOW_PROGRESS_BAR -> progressBarVisibility(true)
             Parameters.HIDE_PROGRESS_BAR -> progressBarVisibility(false)
+            Parameters.REFRESH -> currentFragment.refresh()
+            Parameters.SHOW_ERROR_TOAST -> Toasty.error(this, R.string.error).show()
         }
     }
 

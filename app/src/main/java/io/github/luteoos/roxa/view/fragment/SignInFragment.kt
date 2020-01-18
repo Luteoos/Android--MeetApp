@@ -2,6 +2,8 @@ package io.github.luteoos.roxa.view.fragment
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import es.dmoral.toasty.Toasty
 import io.github.luteoos.roxa.R
 import io.github.luteoos.roxa.baseAbstract.BaseFragment
 import io.github.luteoos.roxa.viewmodel.SignInViewModel
@@ -18,12 +20,19 @@ class SignInFragment : BaseFragment<SignInViewModel>() {
     }
 
     override fun refresh() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun setBindings(){
         btnSignIn.setOnClickListener {
-            viewModel.sendNudes()
+            checkSignIn()
+        }
+    }
+
+    private fun checkSignIn(){
+        when {
+            etUsernameIN.text.isNullOrEmpty() -> Toasty.error(context!!, R.string.error_wrong_username).show()
+            etPasswordIN.text.isNullOrEmpty() -> Toasty.error(context!!, R.string.error_empty_password).show()
+            else -> viewModel.signIn(etUsernameIN.text.toString().replace("\\s".toRegex(),""), etPasswordIN.text.toString().replace("\\s".toRegex(),""))
         }
     }
 

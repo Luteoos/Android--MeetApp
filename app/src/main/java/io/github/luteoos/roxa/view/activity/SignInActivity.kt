@@ -4,12 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import es.dmoral.toasty.Toasty
 import io.github.luteoos.roxa.R
 import io.github.luteoos.roxa.baseAbstract.BaseActivity
 import io.github.luteoos.roxa.utils.Parameters
 import io.github.luteoos.roxa.view.fragment.SignInFragment
 import io.github.luteoos.roxa.view.fragment.SignUpFragment
 import io.github.luteoos.roxa.viewmodel.SignInViewModel
+import kotlinx.android.synthetic.main.activity_main_screen.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : BaseActivity<SignInViewModel>() {
@@ -27,7 +29,9 @@ class SignInActivity : BaseActivity<SignInViewModel>() {
         super.onVMMessage(msg)
         when(msg){
             Parameters.SIGN_IN_SUCCESS -> onSignInSuccess()
-            Parameters.SIGN_IN_FAILED -> { }
+            Parameters.SIGN_IN_FAILED -> Toasty.error(this, R.string.error).show()
+            Parameters.SHOW_PROGRESS_BAR -> progressBarVisibility(true)
+            Parameters.HIDE_PROGRESS_BAR -> progressBarVisibility(false)
         }
     }
 
@@ -38,6 +42,10 @@ class SignInActivity : BaseActivity<SignInViewModel>() {
         tvSignUp.setOnClickListener {
             changeToSignIn(false)
         }
+    }
+
+    private fun progressBarVisibility(visible: Boolean){
+        progressBarSign.visibility = if(visible) View.VISIBLE else View.GONE
     }
 
     private fun switchFragments(piece: Fragment){

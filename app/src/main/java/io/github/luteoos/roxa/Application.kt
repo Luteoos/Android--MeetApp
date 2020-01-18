@@ -12,13 +12,6 @@ class Application : Application() {
         Session.init(applicationContext)
         if(BuildConfig.DEBUG)
             initDebugStuff()
-//        Realm.init(this)
-//        val realmConfiguration = RealmConfiguration
-//            .Builder()
-//            .deleteRealmIfMigrationNeeded()
-//            .build()
-//        Realm.setDefaultConfiguration(realmConfiguration)
-        //SessionManager.init(applicationContext)
     }
 
     private fun initDebugStuff() {

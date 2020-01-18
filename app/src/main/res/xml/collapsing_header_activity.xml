@@ -3,6 +3,15 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
     <ConstraintSet
         android:id="@+id/start">
+<!--        <Constraint-->
+<!--            android:id="@id/progressBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"/>-->
         <Constraint
             android:id="@id/header"
             android:alpha="1.0"
@@ -31,6 +40,15 @@
 
     <ConstraintSet
         android:id="@+id/end">
+<!--        <Constraint-->
+<!--            android:id="@id/progressBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"/>-->
         <Constraint
             android:id="@id/header"
             android:layout_height="0dp"

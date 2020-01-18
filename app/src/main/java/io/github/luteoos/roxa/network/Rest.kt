@@ -40,8 +40,8 @@ object Rest {
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val requestBuilder = original.newBuilder()
-                .header("Content-Type", "charset=utf-8; application/x-www-form-urlencoded")
-                .header("Authorization","")
+                .header("Content-Type", "application/json")//"charset=utf-8; application/x-www-form-urlencoded")
+//                .header("Authorization","")
                 .header("Accept", "application/json")
                 .method(original.method(), original.body())
             val request = requestBuilder.build()

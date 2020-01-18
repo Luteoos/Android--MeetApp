@@ -26,8 +26,8 @@ object Session {
         }
 
 
-    val userUUDString: String?
-        get() = preferences.getString(USER_UUID, "")
+    val userUUIDString: String
+        get() = preferences.getString(USER_UUID, "") ?: ""
     var userUUID: UUID
         get() {
             val userUUID = preferences.getString(USER_UUID, "")

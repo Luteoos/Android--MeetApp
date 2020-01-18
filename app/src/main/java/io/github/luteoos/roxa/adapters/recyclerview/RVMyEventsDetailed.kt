@@ -9,9 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import io.github.luteoos.roxa.R
+import io.github.luteoos.roxa.model.IsGoingWrapper
 import kotlinx.android.synthetic.main.rv_my_events_detailed.view.*
 
-class RVMyEventsDetailed(private val ctx: Context, private val data: MutableList<String>, private val message: (String, String) -> Unit)
+class RVMyEventsDetailed(private val ctx: Context, private val data: MutableList<IsGoingWrapper>, private val message: (String, String) -> Unit)
     : RecyclerView.Adapter<RVMyEventsDetailed.RVMyEventsDetailedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RVMyEventsDetailedViewHolder {
@@ -24,11 +25,11 @@ class RVMyEventsDetailed(private val ctx: Context, private val data: MutableList
 
     override fun onBindViewHolder(holder: RVMyEventsDetailedViewHolder, position: Int) {
         data[position]?.let { data ->
-            getUsernamePlaceholder(data).let {
+            getUsernamePlaceholder(data.username ?: " ").let {
                 holder.ivMemberName.minimumWidth = it.intrinsicWidth
                 holder.ivMemberName.setImageDrawable(it)
             }
-            holder.ivIcon.setImageDrawable(getIconForMember(null))
+            holder.ivIcon.setImageDrawable(getIconForMember(data.isGoing))
         }
     }
 

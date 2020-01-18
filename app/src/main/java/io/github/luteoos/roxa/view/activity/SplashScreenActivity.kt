@@ -13,8 +13,6 @@ class SplashScreenActivity : BaseActivityMVVM<BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        Session.token = "qqqa"
-//        Session.username = "dsadsasd"
         checkToken()
     }
 

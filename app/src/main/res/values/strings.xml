@@ -26,5 +26,19 @@
     <string name="event_name_hint">Event name</string>
     <string name="event_desc_hint">Event description</string>
     <string name="event_local_hint">Event place</string>
+    <string name="error">Error :(</string>
+    <string name="error_wrong_mail">Wrong E-mail</string>
+    <string name="error_wrong_username">Wrong Username</string>
+    <string name="error_wrong_noToS">Accept Terms of Service</string>
+    <string name="error_empty_password">Empty Password</string>
+    <string name="dialog_create_team_title">Create team</string>
+    <string name="dialog_create_team_message">Enter team name below:</string>
+    <string name="dialog_join_team_title">Join team</string>
+    <string name="dialog_join_team_message">Enter invitation below:</string>
+    <string name="dialog_leave_team_title">Leave team</string>
+    <string name="dialog_leave_team_message">Are you sure you want leave this team?</string>
+    <string name="add_to_local_calendar">ADD TO DEVICE CALENDAR</string>
+    <string name="copied_team_invitation_to_clip">Copied team invitation to clipboard</string>
+
     <string name="boilerplate_resource_sample">Panta Rhei</string>
 </resources>

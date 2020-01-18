@@ -124,6 +124,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_below="@id/tvEventLocalization"/>
+
+        <TextView
+            android:id="@+id/tvAddToDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEventTo"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toStartOf="@+id/ivDecline"
+            android:layout_toEndOf="@+id/tvEventDescription"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="4"
+            android:text="@string/add_to_local_calendar"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

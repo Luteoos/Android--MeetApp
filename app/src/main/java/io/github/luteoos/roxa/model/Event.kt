@@ -1,14 +1,15 @@
 package io.github.luteoos.roxa.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class Event(var id: String,
-            var groupId: String,
-            var groupName: String,
-            var name: String,
-            var description: String,
-            var startTime: String,
-            var endTime: String,
-            var localization: String,
-            var isGoing: MutableList<IsGoingWrapper>
+class Event(@SerializedName("Id")var id: String? = null,
+            @SerializedName("GroupId")var groupId: String? = null,
+            @SerializedName("GroupName")var groupName: String? = null,
+            @SerializedName("Name")var name: String? = null,
+            @SerializedName("Description")var description: String? = null,
+            @SerializedName("StartTime")var startTime: String? = null,
+            @SerializedName("EndTime")var endTime: String? = null,
+            @SerializedName("Localization")var localization: String? = null,
+            @SerializedName("IsGoing")var isGoing: MutableList<IsGoingWrapper>? = null
 ) : Serializable

@@ -16,11 +16,12 @@ import androidx.transition.TransitionManager
 import com.bumptech.glide.load.resource.bitmap.Rotate
 import io.github.luteoos.roxa.R
 import io.github.luteoos.roxa.adapters.listAdapter.ListTeamMembersAdapter
+import io.github.luteoos.roxa.model.Group
 import io.github.luteoos.roxa.utils.Parameters
 import io.github.luteoos.roxa.utils.setListViewHeightBasedOnItems
 import kotlinx.android.synthetic.main.rv_my_teams.view.*
 
-class RVMyTeams(private val ctx: Context, private val data: MutableList<String>, private val message: (String, String) -> Unit)
+class RVMyTeams(private val ctx: Context, private val data: MutableList<Group>, private val message: (String, String) -> Unit)
     : RecyclerView.Adapter<RVMyTeams.RVMyTeamsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RVMyTeamsViewHolder {
@@ -32,23 +33,25 @@ class RVMyTeams(private val ctx: Context, private val data: MutableList<String>,
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: RVMyTeamsViewHolder, position: Int) {
-        holder.tvTeamName.text = data[position]
-        holder.btnUnfold.setOnClickListener {
-            unfoldDetails(holder)
-        }
-        holder.membersList?.apply {
-            adapter = ListTeamMembersAdapter(ctx, listOf("qqqa", "twojaStara", "hehehehe","qqqa", "twojaStara", "hehehehe"
-                ,"qqqa", "twojaStara", "hehehehe","qqqa", "twojaStara", "hehehehe","qqqa", "twojaStara", "hehehehe"), message)
-            setListViewHeightBasedOnItems()
-        }
-        holder.btnAddEvent.setOnClickListener {
-            message(data[position], Parameters.CREATE_EVENT)
-        }
-        holder.btnInvite.setOnClickListener {
-            message(data[position], Parameters.SHOW_TEAM_INVITATION)
-        }
-        holder.btnLeave.setOnClickListener {
-            message(data[position], Parameters.LEAVE_TEAM)
+        data[position]?.let {data ->
+            holder.tvTeamName.text = data.name ?: ""
+            holder.tvTeamDescription.text = ""
+            holder.btnUnfold.setOnClickListener {
+                unfoldDetails(holder)
+            }
+            holder.membersList?.apply {
+                adapter = ListTeamMembersAdapter(ctx, data.users ?: mutableListOf(), message)
+                setListViewHeightBasedOnItems()
+            }
+            holder.btnAddEvent.setOnClickListener {
+                message(data.id!!, Parameters.CREATE_EVENT)
+            }
+            holder.btnInvite.setOnClickListener {
+                message(data.invId!!, Parameters.SHOW_TEAM_INVITATION)
+            }
+            holder.btnLeave.setOnClickListener {
+                message(data.id!!, Parameters.LEAVE_TEAM)
+            }
         }
     }
 
