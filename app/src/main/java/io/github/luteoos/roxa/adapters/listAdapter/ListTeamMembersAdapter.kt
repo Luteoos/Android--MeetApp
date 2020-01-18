@@ -33,6 +33,7 @@ class ListTeamMembersAdapter(private val ctx: Context, private val data: Mutable
                     layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false)
                     isNestedScrollingEnabled = false
                     adapter = RVMyDaysDetailed(ctx, data.freeTime ?: mutableListOf() ,{_,_ ->}, false)
+                    this.adapter?.notifyDataSetChanged()
                 }
             }
         }

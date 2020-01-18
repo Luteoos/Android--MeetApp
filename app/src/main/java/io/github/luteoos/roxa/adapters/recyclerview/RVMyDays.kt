@@ -29,10 +29,12 @@ class RVMyDays(private val ctx: Context, private val data: MutableList<MyFreeTim
             holder.btnAddDay.setOnClickListener {
                 message(data.groupId!!, Parameters.ADD_FREE_TIME)
             }
+//            data.freeTime?.first()?.freeTime?.sortBy { it.startTime }
             holder.rvDaysDetailed.apply {
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 adapter = RVMyDaysDetailed(context, data.freeTime?.first()?.freeTime ?: mutableListOf(), message)
                 isNestedScrollingEnabled = false
+                this.adapter?.notifyDataSetChanged()
             }
         }
     }

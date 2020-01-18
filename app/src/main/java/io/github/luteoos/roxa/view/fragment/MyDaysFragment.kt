@@ -46,6 +46,7 @@ class MyDaysFragment : BaseFragment<MainScreenViewModel>() {
             adapter = RVMyDays(context, list){ uuid, parameter ->
                 handleRVButtons(uuid, parameter)
             }
+            this.adapter?.notifyDataSetChanged()
         }
     }
 

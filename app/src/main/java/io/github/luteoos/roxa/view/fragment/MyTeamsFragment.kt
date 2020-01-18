@@ -57,6 +57,7 @@ class MyTeamsFragment : BaseFragment<MainScreenViewModel>() {
             adapter = RVMyTeams(context, list){uuid, parameter ->
                 handleRVButtons(uuid, parameter)
             }
+            this.adapter?.notifyDataSetChanged()
         }
     }
 

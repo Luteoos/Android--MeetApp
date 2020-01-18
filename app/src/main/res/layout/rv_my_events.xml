@@ -103,7 +103,8 @@
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:text="from: yyyy-MM-dd HH:mm" />
+            android:text="from: yyyy-MM-dd HH:mm"
+            android:textAlignment="viewEnd" />
 
         <TextView
             android:id="@+id/tvEventTo"
@@ -116,7 +117,8 @@
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             android:ems="10"
-            android:text="to yyyy-MM-dd HH:mm" />
+            android:text="to yyyy-MM-dd HH:mm"
+            android:textAlignment="viewEnd" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvEventsDetailed"

@@ -30,7 +30,10 @@ class MainScreenViewModel : BaseViewModel() {
         Rest.createService(BasicApi::class.java, Session.token).let { client ->
             disposable.add(client.getMyFreeTime(Session.userUUIDString)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread()).map {
+                    it.body()?.forEach { it.freeTime?.forEach { it.freeTime?.sortBy { it.startTime } } }
+                    it
+                }
                 .subscribe({
                     send(Parameters.HIDE_PROGRESS_BAR)
                     if(it.code() == 200 || it.code() == 204){
@@ -54,6 +57,10 @@ class MainScreenViewModel : BaseViewModel() {
             disposable.add(client.getMyEvents(Session.userUUIDString)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .map {
+                    it.body()?.sortBy { it.startTime }
+                    it
+                }
                 .subscribe({
                     send(Parameters.HIDE_PROGRESS_BAR)
                     if(it.code() == 200 || it.code() == 204){
@@ -77,6 +84,10 @@ class MainScreenViewModel : BaseViewModel() {
             disposable.add(client.getGroupList(Session.userUUIDString)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .map {
+                    it.body()?.forEach { it.users?.forEach { it.freeTime?.sortBy { it.startTime } } }
+                    it
+                }
                 .subscribe({
                     send(Parameters.HIDE_PROGRESS_BAR)
                     if(it.code() == 200 || it.code() == 204){

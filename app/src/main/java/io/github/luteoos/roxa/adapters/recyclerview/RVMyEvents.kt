@@ -37,11 +37,12 @@ class RVMyEvents (private val ctx: Context, private val data: MutableList<Event>
                 isNestedScrollingEnabled = false
                 adapter = RVMyEventsDetailed(context, data.isGoing ?: mutableListOf(),
                     message)
+                this.adapter?.notifyDataSetChanged()
             }
             holder.tvTeamName.text = data.groupName ?: ""
             holder.tvEventName.text = data.name ?: ""
             holder.tvEventDesc.text = data.description ?: ""
-            holder.tvEventLocal.text = data.description ?: ""
+            holder.tvEventLocal.text = data.localization ?: ""
             holder.start.text = ctx.getString(R.string.date_event_from, data.startTime!!.getFormattedDate())
             holder.end.text = ctx.getString(R.string.date_event_to, data.endTime!!.getFormattedDate())
 

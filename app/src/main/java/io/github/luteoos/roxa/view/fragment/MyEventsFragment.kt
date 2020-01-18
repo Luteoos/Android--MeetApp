@@ -43,6 +43,7 @@ class MyEventsFragment : BaseFragment<MainScreenViewModel>() {
             adapter = RVMyEvents(context, list){ uuid, parameter ->
                 handleRVButtons(uuid, parameter)
             }
+            this.adapter?.notifyDataSetChanged()
         }
     }
 
