@@ -6,6 +6,7 @@ import io.github.luteoos.roxa.network.request.*
 import io.github.luteoos.roxa.network.response.MyFreeTimeResponse
 import io.github.luteoos.roxa.network.response.UserLoginResponse
 import io.reactivex.Single
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -49,7 +50,7 @@ interface BasicApi {
 
     @POST("group/CreateEvent/{userId}")
     fun createEvent(@Path("userId")userId: String, @Query("groupId")groupId: String,
-                    @Body event: CreateEventRequest) : Single<Response<Void>>
+                    @Body event: MultipartBody) : Single<Response<Void>>
 
     @POST("group/AddEventResponse/{userId}")
     fun respondToEvent(@Path("userId")userId:

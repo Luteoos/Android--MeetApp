@@ -12,7 +12,7 @@ import java.util.*
 fun String.getFormattedDate(outputPattern: String = "yyyy-MM-dd HH:mm"): String {
     var formattedDateString = ""
     try {
-        val sdf = SimpleDateFormat("MM-dd-yyyy HH:mm", Locale.getDefault())
+        val sdf = SimpleDateFormat(Parameters.REST_DATE, Locale.getDefault())
         sdf.timeZone = TimeZone.getDefault()
         sdf.parse(this)?.let {
             formattedDateString = SimpleDateFormat(outputPattern, Locale.getDefault()).format(it)
@@ -23,7 +23,7 @@ fun String.getFormattedDate(outputPattern: String = "yyyy-MM-dd HH:mm"): String 
     return formattedDateString
 }
 
-fun String.toCalendarInstance(inputPattern: String = "MM-dd-yyyy HH:mm"): Calendar{
+fun String.toCalendarInstance(inputPattern: String = "yyyy-MM-dd'T'HH:mm:ss.SSS"): Calendar{
     val calendar = Calendar.getInstance()
     calendar.time = SimpleDateFormat(inputPattern, Locale.getDefault()).parse(this)
     return calendar
@@ -33,7 +33,6 @@ val Context.layoutInflater: android.view.LayoutInflater
     get() = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as android.view.LayoutInflater
 
 fun Calendar.getRestDate(): String{
-
     return SimpleDateFormat(Parameters.REST_DATE, Locale.getDefault()).let {
         it.timeZone = TimeZone.getDefault()
         it.format(this.time)

@@ -10,7 +10,7 @@ object Parameters {
     const val SHOW_ERROR_TOAST = 99
     const val REFRESH = 33
 
-    const val REST_DATE = "yy-MMM-dd hh:mm:ss a"
+    const val REST_DATE = "yyyy-MM-dd'T'HH:mm:ss.SSS"
     const val DELETE_FREE_TIME = "DELETE_FREE_TIME"
     const val ADD_FREE_TIME = "ADD_FREE_TIME"
     const val LEAVE_TEAM = "LEAVE_TEAM"

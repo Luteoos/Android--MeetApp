@@ -67,4 +67,20 @@ object Rest {
         val retrofit = builder.client(client).build()
         return retrofit.create(serviceClass)
     }
+
+    fun <S> createServiceMultipart(serviceClass: Class<S>, accessToken: String): S{
+        httpClient.addInterceptor { chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
+                .header("Accept", "application/json")
+                .header("Content-Type","multipart/form-data")
+                .header("Authorization", "Bearer " +  accessToken)
+                .method(original.method(), original.body())
+            val request = requestBuilder.build()
+            chain.proceed(request)
+        }
+        val client = httpClient.build()
+        val retrofit = builder.client(client).build()
+        return retrofit.create(serviceClass)
+    }
 }
