@@ -191,10 +191,12 @@ class MainScreenViewModel : BaseViewModel() {
                     }
                     else{
                         send(Parameters.SHOW_ERROR_TOAST)
+                        send(Parameters.REFRESH)
                     }
                 },{
                     send(Parameters.HIDE_PROGRESS_BAR)
                     send(Parameters.SHOW_ERROR_TOAST)
+                    send(Parameters.REFRESH)
                 }))
         }
     }

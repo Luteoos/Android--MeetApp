@@ -99,8 +99,8 @@ class RVMyEvents (private val ctx: Context, private val data: MutableList<Event>
         val tvEventName = view.tvEventName
         val tvEventDesc = view.tvEventDescription
         val tvEventLocal = view.tvEventLocalization
-        val start = view.tvEventTo
-        val end = view.tvEventFrom
+        val end = view.tvEventTo
+        val start = view.tvEventFrom
         val btnAddToCalendar = view.tvAddToDevice
     }
 }

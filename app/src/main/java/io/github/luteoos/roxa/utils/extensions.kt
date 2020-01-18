@@ -19,6 +19,17 @@ fun String.getFormattedDate(outputPattern: String = "yyyy-MM-dd HH:mm"): String 
         }
     } catch (e: Exception) {
         Timber.e(e)
+        try {
+            val shortened = this.replace(".SSS", "")
+            val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+            sdf.timeZone = TimeZone.getDefault()
+            sdf.parse(shortened)?.let {
+                formattedDateString = SimpleDateFormat(outputPattern, Locale.getDefault()).format(it)
+            }
+        } catch (e: Exception) {
+            Timber.e(e)
+
+        }
     }
     return formattedDateString
 }
