@@ -49,7 +49,7 @@ class MyEventsFragment : BaseFragment<MainScreenViewModel>() {
     private fun handleRVButtons(uuid: String, parameter: String){
         when(parameter){
             Parameters.EVENT_ACCEPT -> viewModel.respondToEvent(uuid, true)
-            Parameters.EVENT_DECLINE -> viewModel.respondToEvent(uuid, true)
+            Parameters.EVENT_DECLINE -> viewModel.respondToEvent(uuid, false)
         }
     }
 }
